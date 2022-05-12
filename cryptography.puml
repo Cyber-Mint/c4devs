@@ -1,0 +1,86 @@
+@startmindmap
+
+caption https://github.com/cyber-mint/c4dev
+title Cryptography for Developers
+
+*[#lightgreen] Cryptography
+
+ *_ Secrets
+  * Keys
+****:Key Stretching
+ salt + pepper;
+
+*****[#lightgreen]: **PBKDF2**
+<code>
+    kdf = PBKDF2(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=390000,
+        password='my password' )
+</code>
+;
+    * HKDF
+  * Tokens
+
+ *_ Ciphers <<rose>>
+  * Substitution
+  * Stream
+  * Block
+   * Symmetric
+    * AES
+ * Asymmetric
+  *_ signatures
+   * RSA
+   * ECDSA
+  *_ certificates
+   * X.509
+   * PKCS#7
+   * DER 
+   * PKCS#12
+
+  *_ key exchange
+  * RSA
+  * Eliptic Curve 
+  * Diffie Helman
+
+ *_ Random Numbers
+  * Salt
+  * Initial Vector
+  * NONCE 
+ *_ One Way Functions
+  * hash
+   * MD5
+   * SHA1
+   *[#FFBBCC] SHA256
+  * hmac
+
+left side
+
+--_ Mathematics
+  * xor
+ 
+--_ Python
+  * hashlib
+  * pyopnessl
+
+--_ Linux
+  * base64
+  * xxd
+  * openssl
+  * gpg
+  * sha256sum
+
+
+header
+ Creative Commons (CC)
+endheader
+
+center footer Cyber-Mint (Pty) Ltd
+
+' legend right
+'   Short
+'   legend
+' endlegend
+
+@endmindmap
