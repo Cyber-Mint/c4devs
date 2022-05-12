@@ -22,6 +22,7 @@ title Cryptography for Developers
 ;
     * HKDF
   * Tokens
+   * JWT
 
  *_ Ciphers <<rose>>
   * Substitution
@@ -30,15 +31,18 @@ title Cryptography for Developers
    * Symmetric
     * AES
  * Asymmetric
-  *_ signatures
+  *_ sign & verify
    * RSA
    * ECDSA
   *_ certificates
-   * X.509
-   * PKCS#7
-   * DER 
-   * PKCS#12
-
+   *_ formats
+    * X.509
+    * PKCS#7
+    * DER 
+    * PKCS#12
+   * Certificate Authority
+   * Certificate Revocation
+   * Certificate Signing Request
   *_ key exchange
   * RSA
   * Eliptic Curve 
@@ -54,26 +58,51 @@ title Cryptography for Developers
    * SHA1
    *[#FFBBCC] SHA256
   * hmac
+ *_ Transport Layer Security
+  * SSL/TLS
+  * TLS Handshake
+  * CA certificates
+  * Cipher Suites 
+  * Session Keys
+  * HTTPS encryption
 
 left side
 
 --_ Mathematics
-  * xor
- 
+  * XOR
+  * Modulus mathematics
+  * Prime Numbers
+  * Eliptic Curves
+
 --_ Python
   * hashlib
-  * pyopnessl
+  * pyopenssl
 
 --_ Linux
   * base64
   * xxd
   * openssl
+   * self-signed certificates
   * gpg
   * sha256sum
+  *_ ssh
+   * ssh-keygen
+   * git
 
+--_ Tools & Services
+  * LetsEncrypt
+  * openVPN
+
+--_ HDD & Data
+  *_ Linux
+   * LUKS HDD Encryption
+  *_ Windows
+   * BitLocker HDD Encryption
+  *_ postgresql
+   * pg_crypto
 
 header
- Creative Commons (CC)
+ Creative Commons Zero (CC)
 endheader
 
 center footer Cyber-Mint (Pty) Ltd

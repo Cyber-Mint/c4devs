@@ -2,7 +2,7 @@
 
 Presentation material for a rapid fire lecture on cryptography for developers.
 
-![c4dev.png](./cryptography.png)
+![c4dev.png](out/cryptography/cryptography.png)
 
 ## Random Numbers
 
