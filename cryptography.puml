@@ -28,6 +28,9 @@ title Cryptography for Developers
   * Substitution
   * Stream
   * Block
+   *_ concepts
+    * Fiestal
+    * Cypher Block Chaining
    * Symmetric
     * AES
  * Asymmetric
@@ -77,6 +80,13 @@ left side
 --_ Python
   * hashlib
   * pyopenssl
+
+--_ Concepts
+  * Privacy
+  * Non-Repudiation
+  * Confidentiality
+  * Integrity
+
 
 --_ Linux
   * base64
