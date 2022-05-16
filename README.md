@@ -69,6 +69,14 @@ cat cryptography.puml | sha256sum > cryptography.sha256
 cat cryptography.puml | sha256sum -c cryptography.sha256 
 ```
 
+
+
+
+### RSA (Rivest,Shamir,Adleman) Encryption
+
+References:
+- https://thatsmaths.com/2016/08/11/a-toy-example-of-rsa-encryption/
+
 ---
 Licensed under [Creative Commons Zero (CC)](./LICENSE)<br> 
 Copyright &copy; 2022, Cyber-Mint (Pty) Ltd
