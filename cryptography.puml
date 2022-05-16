@@ -94,6 +94,9 @@ left side
   * openssl
    * self-signed certificates
   * gpg
+   * key management
+   * key servers
+   * chain of trust
   * sha256sum
   *_ ssh
    * ssh-keygen
