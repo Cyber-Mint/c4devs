@@ -51,7 +51,8 @@ title Cryptography for Developers
    * Certificate Signing Request
   *_ key exchange
   * RSA
-  * Eliptic Curve 
+  * Eliptic Curve
+   * ECDHE
   * Diffie Helman
 
  *_ Random Numbers

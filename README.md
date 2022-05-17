@@ -1,3 +1,7 @@
+
+TOdo: https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-aes-rc4-ecc-ecdsa-sha-and-so-on/
+
+
 # Cryptography 4 Developers
 
 Presentation material for a rapid fire lecture on cryptography for developers.
@@ -199,6 +203,17 @@ References:
 * To convert a PKCS#12 file (.pfx .p12) containing a private key and certificates to PEM: `openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes`. 
 * To convert a PEM certificate file and a private key to PKCS#12 (.pfx .p12): `openssl pkcs12 -export -out cert.pfx -inkey privateKey.key -in cert.crt -certfile CACert.crt`
 * PKCS#7 is an open standard used by Java and supported by Windows. It does not contain private key material.
+
+
+# ECC
+
+References:
+- https://onyb.gitbook.io/secp256k1-python/introduction
+- https://pypi.org/project/ecdsa/
+
+---
+General References:
+* https://cryptobook.nakov.com/
 
 ---
 Licensed under [Creative Commons Zero (CC)](./LICENSE)<br> 
