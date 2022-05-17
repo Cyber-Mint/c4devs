@@ -30,11 +30,11 @@ title Cryptography for Developers
   * Block
    *_ concepts
     * Fiestal
-    * Cypher Block Chaining
    * Symmetric
+    * Cypher Block Chaining
     * AES
- * Asymmetric
-  *_ sign & verify
+  * Asymmetric
+   *_ sign & verify
    * RSA
    * ECDSA
   *_ certificates
@@ -50,10 +50,10 @@ title Cryptography for Developers
    * Certificate Revocation
    * Certificate Signing Request
   *_ key exchange
-  * RSA
-  * Eliptic Curve
-   * ECDHE
-  * Diffie Helman
+   * RSA
+   * Eliptic Curve
+    * ECDHE
+   * Diffie Helman
 
  *_ Random Numbers
   * Salt

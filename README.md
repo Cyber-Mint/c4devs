@@ -5,12 +5,13 @@ TOdo: https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-a
 # Cryptography 4 Developers
 
 1. [Concepts](#concepts)
-2. [Random Numbers](#random-numbers)
-3. [Hash Functions](#hash-functions)
-4. [Ciphers](#ciphers)<br>
+2. [Mathematics](#mathematics)
+3. [Random Numbers](#random-numbers)
+4. [Hash Functions](#hash-functions)
+5. [Ciphers](#ciphers)<br>
    4.1. Symmetric<br>
    4.2. Asymmetric<br>
-5. [TLS](#tlsssl)
+6. [TLS](#tlsssl)
 
 Presentation material for a rapid fire lecture on cryptography for developers.
 
@@ -37,12 +38,30 @@ Modern cryptography has the following four main goals:
 | **Integrity**<br>..the impressed wax across the seal | Data integrity is maintained when it can be conclusively proven that the data has not been maliciously or otherwise changed unbeknownst to the user/keepers of that data. | If it changed the parties should know.  Integrity does not guarantee delivery.  |
 | **Forward Secrecy**<br>..the old letters are always kept safe  | Unless the guarantee of secrecy is not just for data exchanged now but for all data exchanged in the past, a mechanism cannot be said to provide **perfect** forward secrecy. | Inappropriate application of cryptography such as re-using an ephemeral EC key could result in the revelation of secrets previously held through historic key compromise. |
 
-
-
-
 ---
 References:
 * https://simplicable.com/new/privacy-examples
+
+---
+# Mathematics
+
+As a developer you will mostly just be using libraries provided in your programming language but there are some aspects of mathematics that will help you build a better conceptual framework when working with cryptographic libraries.
+
+## XOR
+
+All computer science students learn the basic bitwise operations, and `xor` is the one operation that is at the heart of much of cryptography because of the its reversability property `((a xor b) xor a)` is equal to  `b`.
+
+**XOR Truth Table**
+| A | B | A &#8853; B |
+|:---:|:---:|:----------:|
+| 0 | 1 | 1 |
+| 0 | 0 | 0 |
+| 1 | 1 | 0 |
+| 1 | 0 | 1 |
+| | | |
+
+Quick example:
+ 1011 &#8853; 1101 = 0110, and 0110 &#8853; 1011 = 1101
 
 
 ---
