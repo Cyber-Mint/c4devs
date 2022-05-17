@@ -184,6 +184,7 @@ openssl rsa -in nginx-selfsigned.key -text -noout
 
 ### RSA (Rivest,Shamir,Adleman) Encryption
 
+> for now see the Jupyter notebook called [rsa](rsa.ipynb)
 References:
 - https://thatsmaths.com/2016/08/11/a-toy-example-of-rsa-encryption/
 
