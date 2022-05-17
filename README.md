@@ -83,6 +83,53 @@ function roll_dice {
 }
 ```
 
+Since the reversibility of most cryptographic mechanisms depend on the use of truly random number to work, the field of **random numbers** is a critical one to modern cryptography.  The stochastic decay of radioactive atoms and other hardware based sources of random numbers are considered the very best sources of random numbers.
+
+References:
+* https://www.schneier.com/blog/archives/2011/01/sony_ps3_securi.html
+* https://www.design-reuse.com/articles/27050/true-randomness-in-cryptography.html
+
+---
+
+# Hash Functions
+A hash function, otherwise known as a [one-way function](https://cryptography.fandom.com/wiki/One-way_function), takes an arbitrary message of arbitrary length and creates an output (a hash) of a fixed length. The main characteristics of a cryptographic hash function are that given a message, it is easy to compute the hash; given the hash, it is difficult to compute the message; and that given a message, it is difficult to find a different message that would produce the same hash (this is known as a collision)
+Hash functions are used for data integrity and often in combination with digital signatures. With a good hash function, even a 1-bit change in a message will produce a different hash (on average, half of the bits change). With digital signatures, a message is hashed and then the hash itself is signed. The signature will show if the hash value has been tampered with and the hash will show if the message has been modified. The two types of hash functions are unkeyed (MD5, SHA-1) and keyed (MAC).
+> Extract from Encyclopedia of Information Systems, Jeff Gilchrist, 2003
+
+
+
+## md5sum
+> md5 - is not used much for cryptographically secure operations anymore but it is still useful to very quickly determine if files have changed
+
+```
+# to recursively create a list of md5 hashes 
+md5sum * */* 2>/dev/null > files.md5
+
+# to check the list of hashes
+md5sum -c files.md5
+```
+
+## sha256sum
+> Generate and verify SHA256 hashes at the CLI
+
+```
+cat cryptography.puml | sha256sum > cryptography.sha256
+cat cryptography.puml | sha256sum -c cryptography.sha256 
+```
+
+## HMAC
+
+![hmac](/hmac.png)
+Hash-based Message Authentication Code is a Keyed-hash Message Authentication Code(MAC) and is a type of hash that includes ensures Integrity (as may other forms of hashing) but also Authenticity (through the exchange of key).
+
+`echo -n "value-to-digest" | openssl dgst -sha256 -hmac "secret-key-here" -binary | openssl enc -base64 -A`
+
+
+References:
+* https://en.wikipedia.org/wiki/Message_authentication_code
+* https://cryptography.fandom.com/wiki/One-way_function
+---
+
 ## Encryption and Decryption
 
 
@@ -112,24 +159,6 @@ openssl x509 -in cert.pem -text -noout
 
 ## Useful Linux commands
 
-**md5sum**
-> md5 - is not used much for cryptographically secure operations anymore but it is still useful to very quickly determine if files have changed
-
-```
-# to recursively create a list of md5 hashes 
-md5sum * */* 2>/dev/null > files.md5
-
-# to check the list of hashes
-md5sum -c files.md5
-```
-
-**sha256sum**
-> Generate and verify SHA256 hashes at the CLI
-
-```
-cat cryptography.puml | sha256sum > cryptography.sha256
-cat cryptography.puml | sha256sum -c cryptography.sha256 
-```
 
 ### GPG
 
