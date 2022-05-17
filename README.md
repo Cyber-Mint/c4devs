@@ -42,7 +42,8 @@ Modern cryptography has the following four main goals:
 ---
 References:
 * https://simplicable.com/new/privacy-examples
-* 
+
+
 ---
 
 # Random Numbers
