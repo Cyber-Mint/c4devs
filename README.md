@@ -182,7 +182,9 @@ References:
 
 > Exercise: do a small worked example and see how the &#8853; (xor) operator ensures that the process is reversible no matter how many iterations are performed.  Notice that F is any keyed one way function much like an HMAC.  A Feistel cipher approach is utilised for example by the Data Encryption Standard (DES) with other operations. 
 
-
+References:
+* https://www.youtube.com/watch?v=FGhj3CGxl8I
+* 
 ## Symmetric Ciphers
 
 
