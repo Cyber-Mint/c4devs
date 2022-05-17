@@ -4,11 +4,48 @@ TOdo: https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-a
 
 # Cryptography 4 Developers
 
+1. Concepts
+2. Random Numbers
+3. One Way Functions
+4. Ciphers - Symmetric
+5. Ciphers - Asymmetric
+6. TLS
+
 Presentation material for a rapid fire lecture on cryptography for developers.
 
 ![c4dev.png](out/cryptography/cryptography.png)
 
-## Random Numbers
+---
+
+# Concepts
+
+Modern cryptography has the following four main goals:
+
+* The data is confidential and can be read-only by authorized persons
+* The data cannot be changed during transmission or storage without this being noticeable
+* Both the sender and the recipient can confirm each other as the originator or destination of the information
+* The authorship of the message can not be disputed afterward
+  
+<br>
+
+| Principle | Explanation | Example/Comment |
+| --------- | ------------------------------------ | ---------------------------------- |
+| **Privacy**<br>..the envelope | Privacy is the freedom, and basic human right, to live your life unobserved and unrecorded, and underpins safety and security of citizens within the state. | "WIthout encryption all privacy is lost " - Edward Snowden, |
+| **Non Repudiation**<br>.. the originating post mark | Repudiation provides a purveyor of data to claim that the data in question did not originate with them (or was maliciously changed in transit. Non-repudiation is a guarantee (normally mathematically) that this was not possible. | Non-repudiation is particularly important in financial and legal transaction when once originated, the originator should not be able to "weasel out" of their obligations by claiming they never contracted to them. |
+| **Confidentiality**<br>...the seal on the envelope | A secret is something that is only known to those to whom it has been revealed.  Confidentiality is achieved when access to something is kept secret. | Confidentiality can extend beyond the contents of the data to encompass both the sender and receiver, and in this form is known as Anonymity. |
+| **Integrity**<br>..the impressed wax across the seal | Data integrity is maintained when it can be conclusively proven that the data has not been maliciously or otherwise changed unbeknownst to the user/keepers of that data. | If it changed the parties should know.  Integrity does not guarantee delivery.  |
+| **Forward Secrecy**<br>..the old letters are always kept safe  | Unless the guarantee of secrecy is not just for data exchanged now but for all data exchanged in the past, a mechanism cannot be said to provide **perfect** forward secrecy. | Inappropriate application of cryptography such as re-using an ephemeral EC key could result in the revelation of secrets previously held through historic key compromise. |
+
+
+
+
+---
+References:
+* https://simplicable.com/new/privacy-examples
+* 
+---
+
+# Random Numbers
 
 > **PRNG** (Pseudo Random Numbers)<br><br>
 Linux offers the two files `/dev/random` & `/dev/urandom` for blocking & non-blocking random number generation.  Both rely on **CSPRNG** (cryptographically-secure pseudo-random number generator) in the Linux Kernel.<br><br>
