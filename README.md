@@ -4,12 +4,13 @@ TOdo: https://rakhesh.com/infrastructure/notes-on-cryptography-ciphers-rsa-dsa-a
 
 # Cryptography 4 Developers
 
-1. Concepts
-2. Random Numbers
-3. One Way Functions
-4. Ciphers - Symmetric
-5. Ciphers - Asymmetric
-6. TLS
+1. [Concepts](#concepts)
+2. [Random Numbers](#random-numbers)
+3. [Hash Functions](#hash-functions)
+4. [Ciphers](#ciphers)<br>
+   4.1. Symmetric<br>
+   4.2. Asymmetric<br>
+5. [TLS](#tlsssl)
 
 Presentation material for a rapid fire lecture on cryptography for developers.
 
@@ -96,8 +97,8 @@ References:
 A hash function, otherwise known as a [one-way function](https://cryptography.fandom.com/wiki/One-way_function), takes an arbitrary message of arbitrary length and creates an output (a hash) of a fixed length. The main characteristics of a cryptographic hash function are that given a message, it is easy to compute the hash; given the hash, it is difficult to compute the message; and that given a message, it is difficult to find a different message that would produce the same hash (this is known as a collision)
 Hash functions are used for data integrity and often in combination with digital signatures. With a good hash function, even a 1-bit change in a message will produce a different hash (on average, half of the bits change). With digital signatures, a message is hashed and then the hash itself is signed. The signature will show if the hash value has been tampered with and the hash will show if the message has been modified. The two types of hash functions are unkeyed (MD5, SHA-1) and keyed (MAC).
 > Extract from Encyclopedia of Information Systems, Jeff Gilchrist, 2003
-
-
+> 
+<br>
 
 ## md5sum
 > md5 - is not used much for cryptographically secure operations anymore but it is still useful to very quickly determine if files have changed
@@ -130,8 +131,12 @@ References:
 * https://en.wikipedia.org/wiki/Message_authentication_code
 * https://cryptography.fandom.com/wiki/One-way_function
 ---
+# Ciphers
 
-## Encryption and Decryption
+## Symmetric Ciphers
+
+
+### Encryption and Decryption
 
 
 ```bash
@@ -143,6 +148,9 @@ openssl enc -d -aes-256-cbc -pbkdf2 -in encrypted.bin
 echo "fox" | openssl enc -aes-256-cbc -a -pbkdf2 -md sha256 > encrypted.b64
 cat encrypted.b64 | openssl enc -aes-256-cbc -a -md sha256 -pbkdf2 -d
 ```
+
+
+## Asymmetric Ciphers
 
 ## TLS/SSL
 
