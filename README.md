@@ -173,6 +173,11 @@ Web servers need to ensure that the current exchange between client and server c
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 ```
 
+For those interested in the contents of the self-signed certificate and the RSA key generated:
+```
+openssl x509 -in nginx-selfsigned.crt -text -noout
+openssl rsa -in nginx-selfsigned.key -text -noout
+```
 
 
 ---
@@ -181,6 +186,18 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 References:
 - https://thatsmaths.com/2016/08/11/a-toy-example-of-rsa-encryption/
+
+
+
+## File Formats
+
+**PEM** is container format in which we may hold a X.509 certificate (whose structure is defined using ASN.1), encoded using the ASN.1 DER (distinguished encoding rules), then run through Base64 encoding and stuck between plain-text anchor lines (BEGIN CERTIFICATE and END CERTIFICATE).
+
+* To convert a DER file (.crt .cer .der) to PEM: `openssl x509 -inform der -in cert.cer -out cert.pem`.
+* To convert a PEM file to DER: `openssl x509 -outform der -in cert.pem -out certi.der`. 
+* To convert a PKCS#12 file (.pfx .p12) containing a private key and certificates to PEM: `openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes`. 
+* To convert a PEM certificate file and a private key to PKCS#12 (.pfx .p12): `openssl pkcs12 -export -out cert.pfx -inkey privateKey.key -in cert.crt -certfile CACert.crt`
+* PKCS#7 is an open standard used by Java and supported by Windows. It does not contain private key material.
 
 ---
 Licensed under [Creative Commons Zero (CC)](./LICENSE)<br> 

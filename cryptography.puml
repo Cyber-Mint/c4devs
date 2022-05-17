@@ -39,10 +39,13 @@ title Cryptography for Developers
    * ECDSA
   *_ certificates
    *_ formats
+    * PKCS#1-formatting keys & hashes for RSA
+    * ANS.1.BER
     * X.509
-    * PKCS#7
-    * DER 
-    * PKCS#12
+    * PKCS#7-store CRTs & CRLs
+    * DER-crt encoding
+    * PEM-binary crt encoding in base 64
+    * PKCS#12 - store CRTs & CRLs
    * Certificate Authority
    * Certificate Revocation
    * Certificate Signing Request
