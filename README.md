@@ -63,6 +63,28 @@ All computer science students learn the basic bitwise operations, and `xor` is t
 Quick example:
  1011 &#8853; 1101 = 0110, and 0110 &#8853; 1011 = 1101
 
+## Modula Mathematics
+
+Modular mathematics is the other piece of amazingly simple mathematics that is used everywhere in cryptography, and we recall it is the mathematics of integer division and integer remainders
+
+a mod n &#8801; c
+
+eg 5 mod 2 &#8801; the integer remainder after dividing integer 5 by integer 2 ie  5 mod 2 &#8801; 1
+
+This sort of mathematics is one of ways that secure one way functions are created which may be used in hashing and signing operations.
+
+## Prime Numbers
+
+_to be continued_
+* properties of primes
+* factoring of primes
+
+## Elliptic Curves
+
+_to be continued_
+* basic concepts
+* curve parameters & generators
+* curve operations of `addition` & `multiplication` on the curve
 
 ---
 
