@@ -59,7 +59,7 @@ title Cryptography for Developers
   * Salt
   * Initial Vector
   * NONCE 
- *_ One Way Functions
+ *_ Hash Functions
   * hash
    * MD5
    * SHA1
