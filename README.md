@@ -176,6 +176,10 @@ References:
 
 ## Concepts
 
+### Stream Cipher
+
+![stream-cipher](stream-cipher.png)
+
 ### Feistel
 
 ![feistel](Feistel-Cipher.png)
@@ -187,6 +191,19 @@ References:
 * 
 ## Symmetric Ciphers
 
+### Modes of Operation
+
+![modes-of-operation](modes-of-operation.png)
+
+| Mode | Name | Description |
+| ------- | ----------------- | ------------------------------- |
+| ECB | Electronic Code Book| |
+| CBC | Cyclic Block Chaining| |
+| CM/GCM | Galois Counter Mode | |
+| | | |
+
+
+### Common Symmetric Ciphers
 
 ### Encryption and Decryption
 

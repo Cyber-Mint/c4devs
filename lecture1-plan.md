@@ -1,17 +1,17 @@
-# Lesson Plan
+# Lecture One - Plan
 
 1. Draw out the Cryptography mind map on white board & discuss as we expand it.
 2. Order as follows:
 
-    * Concepts (Discuss)
-    * Mathematics (Worked examples)
+    * Concepts (Discuss) 6 min
+    * Mathematics (Worked examples) 3 min
 
-      - XOR Table
-      - Modulus Mathematics
+      - XOR Table (Draw)
+      - Modulus Mathematics (example)
       - mention the others
 
-    * Random Numbers (Discuss & worked CLI examples)
-    * Secrets, Keys & Tokens ( Discuss & show jwt.io)
+    * Random Numbers (Discuss & worked CLI examples) 5 min
+    * Secrets, Keys & Tokens ( Discuss & show jwt.io) 5 min
       
         - key size
         - key spreading (KDFs)
