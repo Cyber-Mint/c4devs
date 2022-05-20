@@ -181,14 +181,23 @@ References:
 ![stream-cipher](stream-cipher.png)
 
 ### Feistel
+<br>
+**Feistel Encryption**
 
-![feistel](Feistel-Cipher.png)
+![feistel-encrypt](feistel-encrypt.png)
 
 > Exercise: do a small worked example and see how the &#8853; (xor) operator ensures that the process is reversible no matter how many iterations are performed.  Notice that F is any keyed one way function much like an HMAC.  A Feistel cipher approach is utilised for example by the Data Encryption Standard (DES) with other operations. 
 
+**Feistel Decryption**
+
+![feistel-encrypt](feistel-decrypt.png)
+
+
 References:
 * https://www.youtube.com/watch?v=FGhj3CGxl8I
-* 
+ 
+
+
 ## Symmetric Ciphers
 
 ### Modes of Operation
