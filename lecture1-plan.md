@@ -32,6 +32,8 @@
         * RSA key pairs ( board discussion)
         * EC suite of algorithms (Keys, Curves & Parameters)
       * Generic Public Key Cryptography (Alice, Bob & Mary - Board love triangle)
+      * small diversion: TLS
       * RSA (python examples)
       * EC (ECC, ECDHE, ECDSA intro with python & openssl)
+      * GPG (PKI in everyday use)
 
