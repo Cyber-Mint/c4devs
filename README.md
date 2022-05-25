@@ -192,6 +192,7 @@ References:
 
 ![feistel-encrypt](feistel-decrypt.png)
 
+> It is interesting to note that AES (outside the scope of this introduction) uses a 2 dimensional array of bits to represent it's function F, which allows for column & row sifts, shuffles and substitution operations, making for an incredibly difficult F to break. 
 
 References:
 * https://www.youtube.com/watch?v=FGhj3CGxl8I
