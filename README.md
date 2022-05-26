@@ -102,7 +102,7 @@ od -An --format=dI rndint #display as a long integer
 ```bash
 openssl rand -base64 10 | base64 --decode
 openssl rand -hex 20 | xxd
-openssl rand -hex 20 -out rndfile.hex
+openssl rand -out rndfile.hex -hex 20 
 ```
 
 For interest you can quickly generate random words from a word dictionary in Linux as this example shows. This is useful for creating Plain Text files for testing encryption & decryption.
@@ -167,6 +167,7 @@ Hash-based Message Authentication Code is a Keyed-hash Message Authentication Co
 
 `echo -n "value-to-digest" | openssl dgst -sha256 -hmac "secret-key-here" -binary | openssl enc -base64 -A`
 
+Checking the digest is the exact same operation on the other side.
 
 References:
 * https://en.wikipedia.org/wiki/Message_authentication_code

@@ -10,7 +10,7 @@ title Cryptography for Developers
 ****:Key Stretching
  salt + pepper;
 
-*****[#lightgreen]: **PBKDF2**
+*****[#lightblue]: **PBKDF2**
 <code>
     kdf = PBKDF2(
         algorithm=hashes.SHA256(),
