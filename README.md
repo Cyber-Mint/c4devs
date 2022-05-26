@@ -367,7 +367,8 @@ References:
 ---
 General References:
 * https://cryptobook.nakov.com/
-
+* https://allabouttesting.org/5-must-know-concepts-in-cryptography/
+* https://crypto.stanford.edu/cs155old/cs155-spring03/lecture8.pdf
 ---
 Licensed under [Creative Commons Zero (CC)](./LICENSE)<br> 
 Copyright &copy; 2022, Cyber-Mint (Pty) Ltd
