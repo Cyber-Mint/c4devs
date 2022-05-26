@@ -165,6 +165,8 @@ cat cryptography.puml | sha256sum -c cryptography.sha256
 ![hmac](/hmac.png)
 Hash-based Message Authentication Code is a Keyed-hash Message Authentication Code(MAC) and is a type of hash that includes ensures Integrity (as may other forms of hashing) but also Authenticity (through the exchange of key).
 
+The advantage of the HMAC over the MAC is that the MAC (with certain hash functions like SHA256) is susceptable to `length extension attacks` where the message length may be tampered with if the key length for the MAC was known.  The HMAC is not susceptible to this kind of attack.
+
 `echo -n "value-to-digest" | openssl dgst -sha256 -hmac "secret-key-here" -binary | openssl enc -base64 -A`
 
 Checking the digest is the exact same operation on the other side.
@@ -172,6 +174,40 @@ Checking the digest is the exact same operation on the other side.
 References:
 * https://en.wikipedia.org/wiki/Message_authentication_code
 * https://cryptography.fandom.com/wiki/One-way_function
+
+## HKDF and Key Spreading
+
+* HKDF is a key derivation algorithm that derives a key of a specified length from an original key material
+* HKDF is based on HMAC
+* HMAC is a message integrity authentication algorithm based on encrypted hash function, and its main purpose is to authenticate message integrity. is used here to increase the randomness of the original key material
+* HKDF consists of two steps: (1) Extract Extract, (2) Expand Expand;
+* HKDF-Extract is HMAC, taking the authentication code of initial key material (IKM), which is equivalent to increasing the randomness of IKM (text) with an additional random source salt (Key);
+* HKDf-Expand is to lengthen the short key while ensuring randomness.
+
+![HKDEF Extract](https://suntus.github.io/img/hkdf/hkdf2.png)
+![HKDEF Expand](https://suntus.github.io/img/hkdf/hkdf3.png)
+Reference:
+* https://suntus-github-io.translate.goog/2019/05/09/HKDF%E7%AE%97%E6%B3%95/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en
+* https://datatracker.ietf.org/doc/html/rfc5869
+
+
+# PBKDF2
+
+PBKDF2 requires four inputs to generate the output key, kout with 
+```
+kout =PBKDF2(Pwd, S, c, kLen )
+```
+where `Pwd` is the password, `S` the salt, `c` the iteration counter, and `kLen` the desired key output length. 
+
+By variation of the number of performed iterations `c`, it is possible to adjust the time needed for computation and thus, by selecting an adequately high number, key strengthening can be achieved rendering password related brute-force attacks less effective. In practice, common values for
+the applications mentioned above range between the recommended minimum of
+1000 and 4000 iterations.
+
+![SHA512 PBKDEF2](https://www.researchgate.net/profile/Tolga-Yalcin-2/publication/265793318/figure/download/fig1/AS:826657761939462@1574101977511/SHA-512-based-PBKDF2-scheme.png)
+
+An HMAC algorithm is repeatedly chained such that the outputs of all HMAC runs are added to the derived key. If the desired output key length is larger than the output of the hash function, the scheme is iterated multiple times, each time with a different counter value `c`.
+
+
 ---
 # Ciphers
 
