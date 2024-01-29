@@ -80,6 +80,16 @@ left side
   * Modulus mathematics
   * Prime Numbers
   * Eliptic Curves
+  * Entropy
+   * Huffman Codes
+
+--[#FFBB00] Not Cryptography
+  * Compression
+   * Lossless
+    * Run Length Encoding
+    * GZIP
+   * Lossy
+    * JPEG
 
 --_ Python
   * hashlib
