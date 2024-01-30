@@ -379,6 +379,84 @@ openssl rsa -in nginx-selfsigned.key -text -noout
 
 ### RSA (Rivest,Shamir,Adleman) Encryption
 
+What follows is a simplistic explanation of RSA encryption for non-mathematicians.
+The two core mathematical principles relevant to understanding RSA encryption are to do with the nature of prime numbers and then modular mathematics.
+
+#### Key Generation
+
+We start by selecting two large primes, not too close to each other and finding the product `n = p.q` such that it is extremely difficult within the lifetime of the universe, and assuming quantum computers have not solved this problem yet, to reverse compute the primes that make up the number `n` !
+
+Now we choose an `e` co-prime to `(p-1)(q-1)`
+
+The `Private Key = [p,q]` and the `Public Key = [e, n]`. Bob who generated this Key Pair, then shares only the public part and keeps the secret part(s) close to his chest always!
+
+#### Encryption
+
+Now if **Alice** wanted to send a message to **Bob** she would get Bob's Public_Key = [e, n]  and construct her cypher text as follows:
+```
+  c = m(essage) ^ e (mod n) 
+```  
+Only Bob's Private Key would successfully decrypt this encrypted message from Alice.
+
+
+#### Decryption
+
+Bob, who never shared his Private_Key = [p,q]may now attempt derypting this message Alice sent to him. 
+
+So, Bob starts by finding `d` such that:
+```
+  Find d.e = 1 (mod (p-1)(q-1) )
+```  
+And decrypts the message in a similar way that it was encrypted but just using the private `d` and public shared number `n` as follows:
+```
+  m = c^d (mod n) 
+```
+Observe that the only secret required to decrypt is the secret value `d` so in fact the primes `p` and `q` could be discarded and only `d` retained and the Private Key would then be [d, n]!
+
+> This is modula prime magic!
+  
+An example that can be done by hand:  
+``` 
+  Lets choose p = 5 q = 11
+  
+  n= 5x11 = 55
+  
+  (p-1)(q-1) = 4 x 10 = 40
+  
+  Now we choose e=3, which is co-prime to 40
+  
+  Public_key = [3, 55]
+  
+  Now send a message = 7
+  
+  c = 7^3 (mod 55) =13
+  
+  The Private key holder [5,11] now can decrypt this
+  
+  by finding d such that
+  
+  3.d = 1(mod 40) 
+  
+  which makes d =27now
+
+  And therefore
+
+  13^27 (mod 55) ===> 7
+``` 
+  
+#### Signing   
+Signing with RSA is done by encrypting a hash and decrypting a hash so using the notation above this would be the equivalent of:
+
+```
+ h=hash(m)
+ 
+ signature: sig == h^3 (mod n)
+ 
+ verify: h == sig^d (mod n)
+```
+
+<br>
+
 > for now see the Jupyter notebook called [rsa](rsa.ipynb)
 References:
 - https://thatsmaths.com/2016/08/11/a-toy-example-of-rsa-encryption/
@@ -398,12 +476,14 @@ References:
 
 # ECC
 
-References:
+> See [ECC jupyter notebook](l/home/andrew/dev/cm/c4devs/ellipticcurve.ipynb)  
+
+## References:
 - https://onyb.gitbook.io/secp256k1-python/introduction
 - https://pypi.org/project/ecdsa/
-
+<br>
 ---
-General References:
+# General References:
 * https://cryptobook.nakov.com/
 * https://allabouttesting.org/5-must-know-concepts-in-cryptography/
 * https://crypto.stanford.edu/cs155old/cs155-spring03/lecture8.pdf
